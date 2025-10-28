@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "YT Music LRCLib Lyrics",
+  "version": "1.0.0",
+  "description": "Letras sincronizadas do LRCLib para YouTube Music",
+  
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "host_permissions": [
+    "https://music.youtube.com/*",
+    "https://lrclib.net/*"
+  ],
+  
+  "background": {
+    "service_worker": "./background/background.js"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*"],
+      "js": [
+        "./src/utils/constants.js",
+        "./src/utils/helpers.js",
+        "./src/utils/dom.js",
+        "./src/services/storage.js",
+        "./src/services/lrclib-api.js",
+        "./src/services/youtube-music.js",
+        "./src/components/ui-manager.js",
+        "./src/components/lyrics-container.js",
+        "./src/components/lyrics-sync.js",
+        "./src/content/message-handler.js",
+        "./src/content/content.js"
+      ],
+      "css": [
+        "./src/styles/main.css",
+        "./src/styles/lyrics.css"
+      ]
+    }
+  ],
+  
+  "action": {
+    "default_popup": "./popup/popup.html",
+    "default_title": "YT Music Lyrics"
+  },
+  
+  "icons": {
+    "16": "./assets/icons/icon16.png",
+    "48": "./assets/icons/icon48.png",
+    "128": "./assets/icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [{
+    "resources": ["assets/images/*"],
+    "matches": ["https://music.youtube.com/*"]
+  }]
+}

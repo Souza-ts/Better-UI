@@ -1,0 +1,44 @@
+/* Variáveis CSS */
+:root {
+  --lrc-bg-dark: rgba(0, 0, 0, 0.95);
+  --lrc-bg-light: rgba(255, 255, 255, 0.95);
+  --lrc-text-dark: #ffffff;
+  --lrc-text-light: #000000;
+  --lrc-accent: #1db954;
+  --lrc-border: #333333;
+  --lrc-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --font-size: 14px;
+}
+
+/* Container principal */
+#ytmusic-lrc-container {
+  position: fixed;
+  z-index: 10000;
+  border-radius: 12px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  box-shadow: var(--lrc-shadow);
+  transition: all 0.3s ease;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+/* Posições */
+#ytmusic-lrc-container[data-position="bottom-right"] {
+  bottom: 80px;
+  right: 20px;
+}
+
+#ytmusic-lrc-container[data-position="bottom-left"] {
+  bottom: 80px;
+  left: 20px;
+}
+
+#ytmusic-lrc-container[data-position="top-right"] {
+  top: 80px;
+  right: 20px;
+}
+
+#ytmusic-lrc-container[data-position="top-left"] {
+  top: 80px;
+  left: 20px;
+}

@@ -1,0 +1,117 @@
+/* Header */
+.lrc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--lrc-border);
+  cursor: move;
+  user-select: none;
+}
+
+.lrc-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.lrc-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.lrc-controls button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.lrc-controls button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Content */
+.lrc-content {
+  padding: 16px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: var(--font-size);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.lrc-line {
+  margin: 8px 0;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  min-height: 1.5em;
+}
+
+.lrc-line.active {
+  opacity: 1;
+  color: var(--lrc-accent);
+  font-weight: 500;
+  transform: scale(1.05);
+}
+
+.lrc-plain {
+  white-space: pre-line;
+  text-align: left;
+}
+
+/* Estados */
+.lrc-loading, .lrc-error {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.7;
+  padding: 20px 0;
+}
+
+/* Footer */
+.lrc-footer {
+  padding: 8px 16px;
+  border-top: 1px solid var(--lrc-border);
+  font-size: 11px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* Temas */
+#ytmusic-lrc-container[data-theme="dark"] {
+  background: var(--lrc-bg-dark);
+  color: var(--lrc-text-dark);
+  border: 1px solid var(--lrc-border);
+}
+
+#ytmusic-lrc-container[data-theme="light"] {
+  background: var(--lrc-bg-light);
+  color: var(--lrc-text-light);
+  border: 1px solid #ddd;
+}
+
+/* Scrollbar personalizada */
+.lrc-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lrc-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lrc-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.lrc-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

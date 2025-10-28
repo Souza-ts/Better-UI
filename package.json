@@ -1,0 +1,14 @@
+{
+  "name": "ytmusic-lrc-extension",
+  "version": "1.0.0",
+  "description": "YouTube Music com letras sincronizadas do LRCLib",
+  "main": "src/content/content.js",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node dev-server.js",
+    "pack": "zip -r extension.zip . -x node_modules/* *.git*"
+  },
+  "keywords": ["youtube-music", "lyrics", "lrclib", "extension"],
+  "author": "Seu Nome",
+  "license": "MIT"
+}
